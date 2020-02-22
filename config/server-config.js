@@ -3,6 +3,7 @@ const configCookieParser = require('./express-cookie-parser');
 const configLogger = require('./express-logger');
 const configSession = require('./express-session');
 const configPassport= require('./passport');
+const configApolloServer = require('./express-apollo');
 
 const config = (server) => {
   configBodyParser(server);
@@ -10,6 +11,7 @@ const config = (server) => {
   configLogger(server);
   configSession(server);
   configPassport(server);
+  configApolloServer(server);
 };
 
 module.exports = config;

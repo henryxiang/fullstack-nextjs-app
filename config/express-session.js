@@ -6,6 +6,11 @@ const sessionConfig = {
   saveUninitialized: false
 };
 
+/**
+ * Enable session with Express.js
+ * 
+ * @param {*} server reference to Express.js server
+ */
 const applyConfig = (server) => {
   server.use(session(sessionConfig));
 }

@@ -1,27 +1,20 @@
 const { ApolloServer } = require('apollo-server-express');
-// const gql = require('graphql-tag');
 const { typeDefs, resolvers } = require('../graphql/schema');
 
-const endpoint = '/graphql';
+const enablePlayground = true;
 
-// const typeDefs = gql`
-//   type Query {
-//     message: String!
-//   }
-// `;
-// const resolvers = {
-//   Query: {
-//     message: () => 'Hello World!',
-//   }
-// };
-
-const config = (server) => {
+/**
+ * Integrate Apollo Server to Express.js
+ * 
+ * @param {*} app reference to Express.js server
+ */
+const config = (app) => {
   const apollo = new ApolloServer({
     typeDefs,
     resolvers,
-    playground: { endpoint }
+    playground: enablePlayground,
   });
-  apollo.applyMiddleware({ app: server });
+  apollo.applyMiddleware({ app });
 }
 
 module.exports = config;

@@ -1,7 +1,12 @@
 const cookieParser = require('cookie-parser');
 
-const applyConfig = (server) => {
+/**
+ * Enable cookie parser with Express.js
+ * 
+ * @param {*} server reference to Express.js server
+ */
+const config = (server) => {
   server.use(cookieParser());
 }
 
-module.exports = applyConfig;
+module.exports = config;

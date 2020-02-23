@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const gql = require('graphql-tag');
 
+const schemaDir = 'schemas';
+
 const root = gql`
   type Query {
     _root_: String
@@ -21,11 +23,11 @@ let resolvers = {
 };
 
 const modules = fs
-  .readdirSync(path.resolve(__dirname, 'schema'))
+  .readdirSync(path.resolve(__dirname, schemaDir))
   .map(f => f.replace('.js', ''));
 
 for (const module of modules) {
-  const schema = require(`./schema/${module}`);
+  const schema = require(`./${schemaDir}/${module}`);
   typeDefs.push(schema.typeDefs);
   resolvers = { ...resolvers, ...schema.resolvers };
 }

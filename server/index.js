@@ -1,26 +1,31 @@
-const express = require('express')
-const next = require('next')
-const applyCustomConfig = require('../config/server-config');
+const express = require('express');
+const next = require('next');
+const appConfig = require('../config/app-config');
+const applyCustomConfig = require('../config/server');
+const configRoutes = require('./routes');
+const ensureAuthentication = require('./middleware/check-authentication');
+const getLogger = require('../utils/log-factory');
 
-const port = parseInt(process.env.PORT, 10) || 3000
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const log = getLogger('server');
+
+const { port = 8080, serverBaseUrl = 'http://localhost' } = appConfig.http;
+
+const dev = appConfig.environment !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = express();
   applyCustomConfig(server);
+  configRoutes(server);
 
-  server.get('/greeting', (req, res) => {
-    return res.send("Hello World!");
-  })
-
-  server.all('*', (req, res) => {
-    return handle(req, res)
-  })
+  server.all('*',
+    ensureAuthentication,
+    (req, res) => handle(req, res)
+  );
 
   server.listen(port, err => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
-  })
+    log.info(`server started on ${serverBaseUrl}:${port}`)
+  });
 });

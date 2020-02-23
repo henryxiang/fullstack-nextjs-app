@@ -4,6 +4,7 @@ const configLogger = require('./express-logger');
 const configSession = require('./express-session');
 const configPassport= require('./passport');
 const configApolloServer = require('./express-apollo');
+const configViewEngine = require('./express-view-engine');
 
 const config = (server) => {
   configBodyParser(server);
@@ -12,6 +13,7 @@ const config = (server) => {
   configSession(server);
   configPassport(server);
   configApolloServer(server);
+  configViewEngine(server);
 };
 
 module.exports = config;

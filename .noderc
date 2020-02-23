@@ -1,0 +1,22 @@
+{
+  "environment": "local",
+  "appName": "demo-app",
+  "http": {
+    "serverBaseUrl": "http://localhost",
+    "documentRoot": "public",
+    "context": "",
+    "port": 3000,
+    "isProxyOn": false
+  },
+  "logger": {
+    "file": {
+      "level": "info",
+      "path": "logs",
+      "enabled": true
+    },
+    "console": {
+      "level": "debug",
+      "enabled": true
+    }
+  }
+}

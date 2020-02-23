@@ -1,13 +1,13 @@
-const appConfig = require('../../config/app-config');
 const loginRoute = require('./login');
-const ensureAuthentication = require('../middleware/check-authentication');
-
-// const context = appConfig.http && appConfig.http.context || '';
+const appConfig = require('../../config/app-config');
+const cas = require('../../config/auth/cas');
 
 const config = (app) => {
-  // const passport = app.get('passport')
-  app.use('/login', loginRoute);
-  app.use('/graphql', ensureAuthentication);
+  if (appConfig.auth.strategy === 'local') {
+    app.use('/login', loginRoute);
+  } else {
+    app.use('/login', cas.authMiddleware);
+  }
 };
 
 module.exports = config;

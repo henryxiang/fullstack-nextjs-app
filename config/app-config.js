@@ -8,7 +8,7 @@ const defaultConfig = {
     context: '',
   },
   auth: {
-    strategy: 'local',
+    strategy: 'cas',
     local: {
       loginPath: 'login',
       password: 'test',

@@ -13,3 +13,42 @@
 [2020-02-22 22:30:04.310] [INFO] config/auth/local - use local authentication strategy
 [2020-02-22 22:30:04.352] [INFO] config/server - enabled GraphQL playground at http://localhost:3000/graphql
 [2020-02-22 22:30:04.369] [INFO] server - server started on http://localhost:3000
+[2020-02-22 22:33:09.076] [INFO] config/auth/local - use local authentication strategy
+[2020-02-22 22:33:09.114] [INFO] config/server - enabled GraphQL playground at http://localhost:3000/graphql
+[2020-02-22 22:33:09.122] [INFO] server - server started on http://localhost:3000
+[2020-02-22 22:46:06.060] [INFO] config/auth/local - use local authentication strategy
+[2020-02-22 22:46:06.105] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 22:46:06.112] [INFO] server - server started on http://localhost:3000
+[2020-02-22 22:46:20.565] [INFO] config/auth/local - use local authentication strategy
+[2020-02-22 22:46:20.606] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 22:46:20.614] [INFO] server - server started on http://localhost:3000
+[2020-02-22 22:46:52.046] [INFO] config/auth/local - use local authentication strategy
+[2020-02-22 22:46:52.088] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 22:46:52.098] [INFO] server - server started on http://localhost:3000
+[2020-02-22 22:47:23.412] [INFO] config/auth/local - logged-in user:
+[2020-02-22 22:47:58.456] [INFO] config/auth/local - use local authentication strategy
+[2020-02-22 22:47:58.499] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 22:47:58.506] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:25:51.645] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:25:51.687] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:25:51.694] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:42:19.896] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:42:19.948] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:42:19.955] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:46:59.798] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:46:59.970] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:47:23.247] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:47:23.287] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:47:23.293] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:49:11.424] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:49:11.492] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:49:11.504] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:51:15.923] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:51:15.980] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:51:15.987] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:51:40.531] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:51:40.572] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:51:40.580] [INFO] server - server started on http://localhost:3000
+[2020-02-22 23:55:00.536] [INFO] config/auth/local - use cas authentication strategy
+[2020-02-22 23:55:00.618] [INFO] config/server - enabled GraphQL playground at http://localhost:3000//graphql
+[2020-02-22 23:55:00.630] [INFO] server - server started on http://localhost:3000

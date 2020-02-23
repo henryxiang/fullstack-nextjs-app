@@ -2,6 +2,6 @@ const cas = require('./cas');
 const local = require('./local');
 
 module.exports = {
-  cas,
+  cas: cas.config,
   local,
 };

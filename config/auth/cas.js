@@ -40,4 +40,30 @@ const config = (passport) => {
   });
 };
 
-module.exports = config;
+const authMiddleware = (req, res, next) => {
+  const passport = req.app.get('passport');
+  const loginSuccessRedirectUrl = `${context}/`;
+  passport.authenticate('cas', (err, user, info) => {
+    if (err) {
+      return res.status(403).send('Access forbidden');
+    }
+
+    if (!user) {
+      req.session.messages = info.message;
+      return res.status(401).send('Unauthorized');
+    }
+
+    req.logIn(user, (loginError) => {
+      if (loginError) {
+        return res.status(401).send('Unauthorized');
+      }
+
+      req.session.messages = '';
+      return res.redirect(loginSuccessRedirectUrl);
+    });
+
+    return null;
+  })(req, res, next);
+};
+
+module.exports = { config, authMiddleware };

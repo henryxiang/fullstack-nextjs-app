@@ -42,4 +42,4 @@ const config = (passport) => {
   });
 };
 
-module.exports = config;
+module.exports = { config };

@@ -25,7 +25,7 @@ const config = (app) => {
   apollo.applyMiddleware({ app });
   if (enablePlayground) {
     const { serverBaseUrl, port } = appConfig.http;
-    log.info(`enabled GraphQL playground at ${serverBaseUrl}:${port}/${playgroundPath}`);
+    log.info(`enabled GraphQL playground at ${serverBaseUrl}:${port}${playgroundPath}`);
   }
 }
 

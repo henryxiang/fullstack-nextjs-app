@@ -16,7 +16,6 @@ const defaultConfig = {
     strategy: 'cas',
     loginPath: 'login',
     local: {
-      loginPath: 'auth',
       password: 'test',
     },
     cas: {

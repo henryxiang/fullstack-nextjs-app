@@ -1,7 +1,7 @@
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('../../graphql/schema');
-const appConfig = require('../../config/app-config');
-const ensureAuthentication = require('../../server/middleware/check-authentication');
+const appConfig = require('./app-config');
+const { requireAuthentication } = require('../middleware/check-authentication');
 const getLogger = require('../../utils/log-factory');
 
 const prefix = appConfig.baseDir + '/';
@@ -21,7 +21,7 @@ const config = (app) => {
     resolvers,
     playground: enablePlayground,
   });
-  app.use(playgroundPath, ensureAuthentication);
+  app.use(playgroundPath, requireAuthentication);
   apollo.applyMiddleware({ app });
   if (enablePlayground) {
     const { serverBaseUrl, port } = appConfig.http;

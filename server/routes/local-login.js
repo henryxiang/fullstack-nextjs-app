@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const passportLogin = require('../middleware/passport-login');
-const appConfig = require('../../config/app-config');
+const { authMiddleware } = require('../config/auth/local');
+const appConfig = require('../config/app-config');
 
 const context = appConfig.http && appConfig.http.context || '';
 
@@ -11,7 +11,7 @@ router.get('/', (_, res) => {
 
 // Authenticate the user
 router.post('/',
-  passportLogin,
+  authMiddleware,
   (_, res) => res.redirect(`${context}/`),
 );
 

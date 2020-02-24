@@ -1,9 +1,13 @@
 const authProvider = require('passport-local');
-const appConfig = require('../../config/app-config');
-const getLogger = require('../../utils/log-factory');
+const appConfig = require('../app-config');
+const getLogger = require('../../../utils/log-factory');
 
 const log = getLogger('config/auth/local');
 const { strategy } = appConfig.auth;
+const context = appConfig.http && appConfig.http.context || '';
+const { loginPath } = appConfig.auth;
+
+const failureRedirect = `${context}/${loginPath}`
 
 const userLogin = async (username, password) => {
   let loginUser = null;
@@ -42,4 +46,11 @@ const config = (passport) => {
   });
 };
 
-module.exports = { config };
+const authMiddleware = (req, res, next) => {
+  console.log('local login');
+  const passport = req.app.get('passport');
+  const passportMiddleware = passport.authenticate('local', { failureRedirect });
+  passportMiddleware(req, res, next);
+};
+
+module.exports = { config, authMiddleware };

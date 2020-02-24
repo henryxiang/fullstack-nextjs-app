@@ -1,6 +1,6 @@
 const passport = require('passport');
-const appConfig = require('../../config/app-config');
-const auth = require('../auth');
+const appConfig = require('./app-config');
+const auth = require('./auth');
 
 const strategy = appConfig.auth.strategy;
 // const configPassport = auth[strategy];

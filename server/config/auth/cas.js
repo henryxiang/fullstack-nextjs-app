@@ -1,6 +1,6 @@
 const authProvider = require('passport-cas');
-const appConfig = require('../../config/app-config');
-const getLogger = require('../../utils/log-factory');
+const appConfig = require('../app-config');
+const getLogger = require('../../../utils/log-factory');
 
 const log = getLogger('config/auth/cas');
 const { serverBaseUrl, port, context, isProxyOn } = appConfig.http;

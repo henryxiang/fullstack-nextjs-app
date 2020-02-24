@@ -1,9 +1,8 @@
 const express = require('express');
 const next = require('next');
-const appConfig = require('../config/app-config');
-const applyCustomConfig = require('../config/server');
-const configRoutes = require('./routes');
-const ensureAuthentication = require('./middleware/check-authentication');
+const appConfig = require('./config/app-config');
+const applyCustomConfig = require('./config');
+const { ensureAuthentication } = require('./middleware/check-authentication');
 const getLogger = require('../utils/log-factory');
 
 const log = getLogger('server');
@@ -17,7 +16,6 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
   applyCustomConfig(server);
-  configRoutes(server);
 
   server.all('*',
     ensureAuthentication,

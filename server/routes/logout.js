@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const config = require('../../config/app-config');
+const config = require('../config/app-config');
 
 const authStrategy = config.auth.strategy || 'local';
 const casLogoutUrl = config.auth.cas.logoutUrl;

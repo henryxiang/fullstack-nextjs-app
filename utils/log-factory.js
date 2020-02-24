@@ -1,8 +1,9 @@
 const winston = require('winston');
 require('winston-daily-rotate-file');
 const moment = require('moment');
-const config = require('../config/app-config');
+const { defaultConfig } = require('../config/default-config');
 
+const config = defaultConfig;
 const env = config.environment;
 const appName = config.appName;
 const logConfig = config.logger;

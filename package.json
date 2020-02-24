@@ -26,16 +26,20 @@
     "rc-yaml": "^2.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "strip-json-comments": "^3.0.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
+    "@types/next": "^9.0.0",
+    "change-case": "^4.1.1",
     "jest": "^25.1.0",
+    "minimist": "^1.2.0",
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "dev": "nodemon --ignore 'pages/*.*' -x node server",
+    "dev": "nodemon --ignore 'pages/*.*' -x node server --config=config/dev-config.json",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server"
   },
